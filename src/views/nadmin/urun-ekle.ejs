@@ -1,0 +1,112 @@
+
+            <section class="content-main">
+                <div class="row">
+                    <div class="col-9">
+                        <div class="content-header">
+                            <h2 class="content-title">Yeni Ürün ekle</h2>
+                            <div>
+                                <button class="btn btn-light rounded font-sm mr-5 text-body hover-up">Taslağa Kaydet</button>
+                                <button class="btn btn-md rounded font-sm hover-up">Paylaş</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <h4>Ürün Bilgileri</h4>
+                            </div>
+                            <div class="card-body">
+                                <form method="POST" action="urun-ekle">
+                                    <div class="mb-4">
+                                        <label for="product_name" class="form-label">Ürün Adı</label>
+                                        <input type="text" placeholder="Ürün adını Buraya Yazınız" name="urunadi" class="form-control" id="product_name" />
+                                    </div>
+                                    <div class="mb-4">
+                                        <label class="form-label">Ürün Açıklaması</label>
+                                        <textarea placeholder="Ürün Açıklmasını Buraya Yazınız" name="urunaciklamasi" class="form-control" rows="4"></textarea>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <div class="mb-4">
+                                                <label class="form-label">Ürün Fiyatı</label>
+                                                <div class="row gx-2">
+                                                    <input placeholder="TL" name="urunfiyati"  type="text" class="form-control" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="mb-4">
+                                                <label class="form-label">Ürün indirimli fiyatı</label>
+                                                <input placeholder="TL" name="inidrimlifiyat" type="text" class="form-control" />
+                                            </div>
+                                        </div>
+                                         
+                                    </div>
+                                    <div class="mb-4">
+                                        <label class="form-label">İndirim Oranı</label>
+                                        <input type="text" placeholder="%" name="indirimoranı" class="form-control" id="product_name" />
+                                    </div>
+                                    <label class="form-check mb-4">
+                                        <input class="form-check-input" type="checkbox" value="" />
+                                        <span class="form-check-label"> Şablon Yap </span>
+                                    </label>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- card end// -->
+                   
+                        <!-- card end// -->
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <h4>Resimler</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="input-upload">
+                                    <img src="assets/imgs/theme/upload.svg" alt="" />
+                                    <input class="form-control" type="file" />
+                                </div>
+                            </div>
+                        </div>
+                        <!-- card end// -->
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <h4>Kategoriler</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="row gx-2">
+                                    <div class="col-sm-6 mb-3">
+                                        <label class="form-label">Ürün Kategorisi</label>
+                                            <select class="form-select" name="urunkategori">
+                                                <% urunkategori.forEach(element => { %>
+                                                    
+                                                    
+                                                <option value="<%- element.kategoriurl  %>"><%- element.kategoriadi  %></option>
+                                              
+                                                <% });  %>
+                                               
+                                            </select>
+                                    </div>
+                                    <div class="col-sm-6 mb-3">
+                                        <label class="form-label">Alt Kategori</label>
+                                        <select class="form-select">
+                                            <option>NULL</option>
+                                            <option>null</option>
+                                            <option>null</option>
+                                            <option>null</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-4">
+                                        <label for="product_name" class="form-label">Etiketler</label>
+                                        <input type="text" class="form-control" />
+                                    </div>
+                                </div>
+                                <!-- row.// -->
+                            </div>
+                        </div>
+                        <!-- card end// -->
+                    </div>
+                </div>
+            </section>
+      

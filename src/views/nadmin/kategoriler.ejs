@@ -1,0 +1,105 @@
+            <section class="content-main">
+                <div class="content-header">
+                    <div>
+                        <h2 class="content-title card-title">Kategoriler</h2>
+                        <p>Kategori ekle, çıkar, sil</p>
+                        <div id="alertthis" style="display: none;" class="alert alert-success alert-dismissible fade show" role="alert">
+                            <strong><div  id="error-message"></div></strong>
+                            </button>
+                        </div>
+                        
+                    </div>
+                    <div>
+                        <input type="text" placeholder="Kategori Ara" class="form-control bg-white" />
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <form method="post" id="mykategori">
+                                    <div class="mb-4">
+                                        <label for="product_name" class="form-label">Kategori Adı</label>
+                                        <input type="text" value="<%- kategoriadi != undefined ? kategoriadi : ''  %>"  placeholder="Kategori Adı" name="kategoriadi" class="form-control" id="product_name" />
+                                    </div>
+                                    <div class="mb-4">
+                                        <label for="product_slug" class="form-label">Kategori Url</label>
+                                        <input type="text" placeholder="Bu Kısım otomatik olacaktır." disabled name="kategoriurl" class="form-control" id="product_slug" />
+                                    </div>
+
+                                   <div class="mb-4">
+                                        <!-- <label class="form-label">Alt Kategori </label>
+                                        <select class="form-select">
+                                            <option>Fruit</option>
+                                            <option>Snack</option>
+                                        </select>-->
+                                    </div>
+                                    <div class="mb-4">
+                                        <label class="form-label">Kategori Açıklaması</label>
+                                        <textarea value="<%- typeof kategoriaciklama != undefined ? kategoriaciklama: ''  %>"  placeholder="Kategori Açıklaması" name="kategoriaciklama" class="form-control"></textarea>
+                                    </div>
+                                    <div class="d-grid">
+                                        <button class="btn btn-primary" type="submit" name="submit">Kategori Oluştur</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" />
+                                                    </div>
+                                                </th>
+                                                <th>Kategori Numarası</th>
+                                                <th>Adı</th>
+                                                <th>Açıklaması</th>
+                                                <th>Url</th>
+                                                <th>Emir</th>
+                                                <th class="text-end">Düzenle</th>
+                                            </tr>
+                                        </thead>
+                                       <tbody>
+                                       <form>
+                                         <% kategorim.forEach(function(kategori) { %>
+                                                <tr>
+                                                <td class="text-center">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="" />
+                                                    </div>
+                                                </td>
+                                                <td>21</td>
+                                                <td><b><%- kategori.kategoriadi %></b></td>
+                                                <td><%- kategori.kategoriaciklama %></td>
+                                                <td><%- kategori.kategoriurl %></td>
+                                                <td>1</td>
+                                                <td class="text-end">
+                                                  <div class="dropdown">
+                                                    <a href="#" data-bs-toggle="dropdown" class="btn btn-light rounded btn-sm font-sm">
+                                                      <i class="material-icons md-more_horiz"></i>
+                                                    </a>
+                                                    <div class="dropdown-menu">
+                                                      <a class="dropdown-item" href="#">Kategori Detay</a>
+                                                      <a class="dropdown-item" href="#">Kategori Düzenle</a>
+                                                      <button type="button" onclick="deleteCategory('<%= kategori._id %>')" class="dropdown-item text-danger">Sil</button>
+                                                    </div>
+                                                  </div>
+                                                                                                
+                                                    </div>  <% }); %>
+                                                </td>
+                                          
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- .col// -->
+                        </div>
+                        <!-- .row // -->
+                    </div>
+                    <!-- card body .// -->
+                </div>
+                <!-- card .// -->
+            </section>
+ 

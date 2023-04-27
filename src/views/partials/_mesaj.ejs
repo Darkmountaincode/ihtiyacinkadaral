@@ -1,0 +1,27 @@
+<% validation_error.forEach(element => { %>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+       <strong><%- element.msg %></strong>
+       <button type="button" class="close" data-dismiss="alert" aria-label="close">
+       <span aria-hidden="true">&times;</span></button>
+   </div>
+<% })
+ %>
+ <!---
+<%- %> da html kodlarını çalıştırabiliyorsunuz hocam
+<%= %> da çalıştıramazsınız biliyorsunuzdur eğitimden evet element.msg sadece yazı veriyor diye öyle yazmıştım biri açık olarak kullanmasın hocam cookie den geliyor sanırım bu hata mesajı
+-->
+  <% success_message.forEach(element => { %>
+   <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <strong><%- element.msg %></strong>
+      <button type="button" class="close" data-dismiss="alert" aria-label="close">
+      <span aria-hidden="true">&times;</span></button>
+  </div>
+ <% }) %>
+
+ <% login_error.forEach(error => { %>
+   <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <strong><%- error %></strong>
+      <button type="button" class="close" data-dismiss="alert" aria-label="close">
+      <span aria-hidden="true">&times;</span></button>
+  </div>
+ <% }) %>

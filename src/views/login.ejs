@@ -1,0 +1,107 @@
+
+<main class="main pages">
+    <div class="page-header breadcrumb-wrap">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html" rel="nofollow"><i class="fi-rs-home mr-5"></i>Home</a>
+                <span></span> Pages <span></span> My Account
+            </div>
+        </div>
+    </div>
+    <div class="page-content pt-150 pb-150">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-8 col-lg-10 col-md-12 m-auto">
+                    <div class="row">
+                        <div class="col-lg-6 pr-30 d-none d-lg-block">
+                            <img class="border-radius-15" src="assets/imgs/page/login-1.png" alt="" />
+                        </div>
+                        <div class="col-lg-6 col-md-8">
+                            <div class="login_wrap widget-taber-content background-white">
+                                <div class="padding_eight_all bg-white">
+                                    <div class="heading_s1">
+                                        
+                                        <h1 class="mb-5">Giriş Yap</h1>
+                                        <p class="mb-30">Don't have an account? <a href="kayit-ol">Kayıt Ol</a></p>
+                                        <% if (locals.validation_error != undefined) { %>
+                                            <%- include('./partials/_mesaj')  %>
+                                       <% } %>
+                                    </div>
+                                    <form method="post" action="login">
+                                        <div class="form-group">
+                                            <input type="text" value="<%- typeof email != undefined ? email : ''  %>" name="email" placeholder="Username or Email *" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input  type="password" value="<%- typeof sifre != undefined ? sifre : '' %>" name="sifre" placeholder="Your password *" />
+                                        </div>                                          
+                                        </div>
+                                        <div class="login_footer form-group mb-50">
+                                            <div class="chek-form">
+                                                <div class="custome-checkbox">
+                                                    <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox1" value="" />
+                                                    <label class="form-check-label" for="exampleCheckbox1"><span>Remember me</span></label>
+                                                </div>
+                                            </div>
+                                            <a class="text-muted" href="#">Forgot password?</a>
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-heading btn-block hover-up" name="login">Log in</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+<!-- <form>
+    <input type="text" name="name" placeholder="İsim giriniz">
+    <input type="text" name="surname" placeholder="Soy İsim giriniz">
+    <input type="submit" onclick="gonder(); return false;" value="Gönder">
+</form> -->
+
+<!--  bu form dan yani Yükleniyor ekranı gelecekti sunucunun yanıt vermesini bekliyor olacaktık bir kaç saniyelik burda direkt front dan gönderiyor backend deki api a bu basit olduğu için bekleme süresi o kadar da büyük değil
+resim, dosya veya çok fazla data varsa de backend e bu şekilde gönderirseniz
+kullanıcıyı bekletmezsiniz şu kısım dönerken orası sürekli döner resim vs yüklerken data fazla iken yani bu şekilde gönderirsek orası dönmez user a yüklendiğini gösteren 
+bir process bar verebiliriz yani bu tarz şeyler göstere biliriz ne kadar yüklendiğini vs r cok iyimiş bayıldım ben buna resim dosya da vs iş görür iyi ben şöyle yapmıştım o zaman
+yanlış oldu dimi hocam 1dk
+
+hocam bu şekilde sunucu da çok fazla kontrol yapmak zorunda olmazsınız ama api kapak gibi açık olur :D yani riskli mi ? :D Postman ile api a istek atıp işlem yapabilirler 
+bende son derslerde postman görmüştüm bunu engellemek mümkün değil mi ilal çözüm vardır :D
+
+javascript kodunu bu şekilde şifreleyebilirsiniz hocam kimse de göremez düzgün bir şekilde de çalışır
+şifrelenmiş hali de kısaca sorunsuz çalışıyor decode edemez mi kimse edemez hocam önceden aynı kodu biri yapıp encode etmediyse bir decode sitesinde onlar veritabanında tutuyorlar encode decode u o şekilde çözüyorlar 
+-->
+
+    <!-- <script>
+        // /api/test post
+        async function gonder() {
+            let name = document.querySelector('input[name="name"]').value;
+            let surname = document.querySelector('input[name="surname"]').value;
+
+            let data = {
+                name: name,
+                surname: surname
+            }
+
+            let response = await fetch('/api/test', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data),
+            });
+
+            let result = await response.json();
+            if (result.status == 200) {
+                alert(result.message);
+            } else {
+                alert(result.message); 
+            }
+        }
+    </script> -->

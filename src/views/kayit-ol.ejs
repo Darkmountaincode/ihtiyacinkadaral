@@ -1,0 +1,96 @@
+  <main class="main pages">
+        <div class="page-header breadcrumb-wrap">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="index.html" rel="nofollow"><i class="fi-rs-home mr-5"></i>Home</a>
+                    <span></span> Pages <span></span> My Account
+                </div>
+            </div>
+        </div>
+        <div class="page-content pt-150 pb-150">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-8 col-lg-10 col-md-12 m-auto">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-8">
+                                <div class="login_wrap widget-taber-content background-white">
+                                    <div class="padding_eight_all bg-white">
+                                        <div class="heading_s1">
+                                            <h1 class="mb-5">Bir Hesap Oluşturun</h1>
+                                    
+                                            <p class="mb-30">Hesabınız Var Mı? <a href="login">Giriş Yapın</a></p>
+                                           <% if (locals.validation_error != undefined) { %>
+                                                <%- include('./partials/_mesaj')  %>
+                                           <% } %>
+                                        </div>
+                                        <form action="kayit-ol"  method="post">
+                                            <div class="form-group">
+                                                <input type="text"  value="<%= typeof kullaniciadi != 'undefined' ? kullaniciadi : ''  %>"  name="kullaniciadi" placeholder="Username" />
+                                            </div>
+                                            <div class="form-group">
+                                                <input value="<%= typeof ad != 'undefined' ? ad : ''  %>" type="text"name="ad" placeholder="Adınız." />
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" value="<%= soyad != 'undefined' ? soyad : ''  %>"  name="soyad" placeholder="Soyadınız" />
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" value="<%= email != 'undefined' ? email : '' %>"  name="email" placeholder="Email Adresiniz" />
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="password" value="<%= sifre != 'undefined' ? sifre:'' %>" name="sifre" placeholder="Şifreniz" />
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="password" value="<%= resifre != 'undefined' ? resifre: ''  %>" name="resifre" placeholder="Şifrenizi Tekrar Giriniz" />
+                                            </div>
+                                            <div class="login_footer form-group">
+                                                <!-- <div class="chek-form">
+                                                    <input type="text" required="" name="dogrulamakodu" placeholder="Doğrulama Kodu *" />
+                                                </div> -->
+                                                <span class="security-code">
+                                                    <b class="text-new">8</b>
+                                                    <b class="text-hot">6</b>
+                                                    <b class="text-sale">7</b>
+                                                    <b class="text-best">5</b>
+                                                </span>
+                                            </div>
+                                            <div class="login_footer form-group mb-50">
+                                                <div class="chek-form">
+                                                    <div class="custome-checkbox">
+                                                        <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox12" value="" />
+                                                        <label class="form-check-label" for="exampleCheckbox12"><span>Kullanıcı Sözleşmesi.</span></label>
+                                                    </div>
+                                                </div>
+                                                <a href="page-privacy-policy.html"><i class="fi-rs-book-alt mr-5 text-muted"></i>Daha Fazla</a>
+                                            </div>
+                                            <div class="form-group mb-30">
+                                                <button type="submit" class="btn btn-fill-out btn-block hover-up font-weight-bold" name="login">KAyıt Ol</button>
+                                            </div>
+                                            <p class="font-xs text-muted"><strong>Not:</strong>
+                                                Kişisel verileriniz, bu web sitesindeki deneyiminizi desteklemek, hesabınıza erişimi yönetmek ve gizlilik politikamızda açıklanan diğer amaçlar için kullanılacaktır.</p>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 pr-30 d-none d-lg-block">
+                                <div class="card-login mt-115">
+                                    <a href="#" class="social-login facebook-login">
+                                        <img src="assets/imgs/theme/icons/logo-facebook.svg" alt="" />
+                                        <span>Facebook ile Bağlan</span>
+                                    </a>
+                                    <a href="#" class="social-login google-login">
+                                        <img src="assets/imgs/theme/icons/logo-google.svg" alt="" />
+                                        <span>Google ile Bağlan</span>
+                                    </a>
+                                    <a href="#" class="social-login apple-login">
+                                        <img src="assets/imgs/theme/icons/logo-apple.svg" alt="" />
+                                        <span>Apple ile Bağlan</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+   
