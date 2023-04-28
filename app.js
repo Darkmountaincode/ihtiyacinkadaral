@@ -1,6 +1,5 @@
 // app.js
 
-// tanımlar global çevirilecek
 const dotenv = require('dotenv').config();
 const express = require('express');
 const authRouter = require('./src/routers/auth_routers');
