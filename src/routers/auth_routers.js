@@ -33,10 +33,3 @@ router.post('/api/test', (req, res) => {
 
 module.exports = router;
 
-// uzantılar gelmemiş hocam vsc yi yeniden başlatınca aktif olur formatter birde hocam api kullansanız daha iyi olur ne için kullanıcam apiyi hocam
-// kendi api ınız olacak hocam  he api işine bu şuan üstünde çalıştım proje bitince eklicektim ters mi yapıyorum :D fark etmez hocam size kalmış bir şey ama
-// biri kayıt olacakken front da bilgileri girince javascript ile backend deki api a istek atarak işlem yaptırırsanız daha hızlı oluyor örnek gösterme şansınız var mı yine src nin içindeyiz bi dk
-
-// hocam bu html dosyalarınız neredeydi dalmısım sizi izlerken :D gözüm kaymış ekrana
-
-// şimdi hocam direkt post ediyor olsaydık form dan
