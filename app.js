@@ -28,9 +28,7 @@ app.set('view engine', 'ejs');
 app.set('views',path.resolve(__dirname, './src/views'));
 app.use('/api', express.static(__dirname + '/api'));
 
-// şimdi hocam her yerde bunları tekrar tekrar tanımlamayın bunları vs onları global yapın her yerde kullanabilirsiniz o sayede app.js de yaparsanız global tanımları daha iyi olur
-// o cok iyimiş kursu bitirdim ama böyle bir şey öğretmediler valla hocam sence kod düzenim cok mu kötü hocam isimlendirme olayı sorun sizde yonetim demişsiniz diğer yarısı controller olmuş yarı ingilizce yarı türkçe pek olmamış
-// onu çözemedim için rastgele yazdım normalde öyle yazmıyordum 
+
 
 app.use(session(
   {
